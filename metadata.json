@@ -1,0 +1,6 @@
+{
+  "name": "JARVIS V1 - Voice Research Agent",
+  "description": "Voice-controlled company decision-maker research and Google Sheets automation assistant with strict verification.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

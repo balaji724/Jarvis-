@@ -1,0 +1,325 @@
+:root {
+  --bg-primary: #0a0f1d;
+  --bg-secondary: #10192e;
+  --bg-card: #15223c;
+  --accent-cyan: #00e5ff;
+  --accent-blue: #2563eb;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-color: #1e293b;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, sans-serif;
+  line-height: 1.5;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.reactor-core {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-cyan) 0%, #0369a1 70%, transparent 100%);
+  box-shadow: 0 0 16px var(--accent-cyan);
+  animation: pulse 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.08); opacity: 1; }
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.status-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background-color: rgba(0, 229, 255, 0.1);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+/* Controls */
+.controls-panel {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #0284c7;
+  color: #fff;
+}
+.btn-primary:hover { background-color: #0369a1; }
+
+.btn-secondary {
+  background-color: #334155;
+  color: #fff;
+}
+.btn-secondary:hover { background-color: #475569; }
+
+.btn-danger {
+  background-color: #991b1b;
+  color: #fff;
+}
+.btn-danger:hover { background-color: #b91c1c; }
+
+.btn-outline {
+  background: transparent;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+}
+.btn-outline:hover { background-color: #1e293b; }
+
+.btn-cyan {
+  background-color: #0891b2;
+  color: #fff;
+}
+.btn-cyan:hover { background-color: #0e7490; }
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stat-success .stat-value { color: var(--success); }
+.stat-processing .stat-value { color: var(--accent-cyan); }
+.stat-warning .stat-value { color: var(--warning); }
+.stat-danger .stat-value { color: var(--danger); }
+
+/* Monitor Card */
+.monitor-card {
+  background: linear-gradient(135deg, #101c36, #16264c);
+  border: 1px solid #1e3a6e;
+  border-radius: 8px;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+}
+
+.monitor-header {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+}
+
+.monitor-body {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.monitor-col .label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.val-highlight {
+  font-size: 18px;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+/* Research Box */
+.research-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.research-box h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #e2e8f0;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-form input {
+  background: #0b1325;
+  border: 1px solid #334155;
+  color: #fff;
+  padding: 9px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+}
+
+/* Results Table */
+.results-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.table-header h2 {
+  font-size: 16px;
+}
+
+.count-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: #0f172a;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #0d172c;
+  color: #94a3b8;
+  padding: 10px 14px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #1e293b;
+  color: #cbd5e1;
+}
+
+.data-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.empty-msg {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+}
+
+.badge-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.badge-verified { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+.badge-review { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+.badge-failed { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+
+a.source-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+a.source-link:hover { text-decoration: underline; }
